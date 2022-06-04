@@ -11,11 +11,11 @@ jobs:
     strategy:
       matrix: [12]
     name: Node ${{ matrix.node }}
-  steps:
-    - name: Checkout branch
-      uses: actions/checkout@v3
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node }}
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
 
