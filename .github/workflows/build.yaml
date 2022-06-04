@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Running reusable
-        uses: ./.github/workflow/re-usable.yaml
+        uses: ./.github/workflow/re-usable.yaml@main
 
   build:
     runs-on: ubuntu-latest
