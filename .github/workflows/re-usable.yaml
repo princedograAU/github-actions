@@ -8,6 +8,7 @@ jobs:
   reusable:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Display current branch name
         run: echo '::set-output name=SELECTED_COLOR::green'
         id: random-color-generator
