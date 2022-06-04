@@ -3,18 +3,20 @@ name: Node.js CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      name:
+        type: choice
+        description: Approve to run
+        options:
+          - approve
+      message:
+        required: true
 
 jobs:
-  display:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Running reusable
-        uses: ./.github/workflow/re-usable.yaml@main
-
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.name == 'approve' }}
     strategy:
       matrix:
         node-version: [10.x,]
