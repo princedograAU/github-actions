@@ -8,9 +8,10 @@ on:
 
 jobs:
   display:
-    uses: ./.github/workflow/re-usable.yaml
-    with:
-      username: mona
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running reusable
+        uses: ./.github/workflow/re-usable.yaml
 
   build:
     runs-on: ubuntu-latest
