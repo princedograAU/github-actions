@@ -5,9 +5,11 @@ on:
     branches: [main]
 
 jobs:
-  steps:
-    - name: Display current branch name
-      run: echo '::set-output name=SELECTED_COLOR::green'
-      id: random-color-generator
-    - name: Get Color
-      run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+  reusable:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display current branch name
+        run: echo '::set-output name=SELECTED_COLOR::green'
+        id: random-color-generator
+      - name: Get Color
+        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
